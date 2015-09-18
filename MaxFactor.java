@@ -1,3 +1,10 @@
+/*
+ * Solution to problem #3048 on Peking Online Judge  
+ * http://poj.org/problem?id=3048
+ * Written by Phillip Shih
+ * September 18, 2015
+ */
+
 import java.util.*;
 
 public class MaxFactor
