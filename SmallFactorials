@@ -1,0 +1,41 @@
+/*
+ * Solution to problem "Small Factorials" on Sphere Online Judge  
+ * http://www.spoj.com/problems/FCTRL2/
+ * Written by Phillip Shih
+ * September 21, 2015
+ */
+
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        for (int j = 0; j < n; j++)
+        {
+            int[] total = new int[200];
+            total[0] = 1;
+            int m = 1;
+            int num = in.nextInt();
+            for (int i = 1; i <= num; i++)
+            {
+                int temp = 0;
+                for (int k = 0; k < m; k++)
+                {
+                    total[k] = total[k]* i + temp;
+                    temp = total[k] / 10;
+                    total[k] %= 10;
+                    if (temp > 0 && k == m-1)
+                        m++;
+                }
+                
+            }
+            String output = "";
+            for (int i = m-1; i >= 0; i--)
+                System.out.print(total[i]);
+            System.out.println();
+        }
+    }
+}
